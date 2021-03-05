@@ -50,10 +50,10 @@ public class LoginController {
                     System.exit(0);
                     break;
                 case "401":
-                    actiontarget.setText("Password is wrong.");
+                    actiontarget.setText("Invalid username or password.");
                     break;
                 default:
-                    actiontarget.setText("Password is wrong.");
+                    actiontarget.setText("Invalid username or password.");
                     //actiontarget.setText("Unknown error occurred. Try it again.");
             }
 

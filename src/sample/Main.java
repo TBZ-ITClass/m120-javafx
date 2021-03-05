@@ -22,10 +22,8 @@ public class Main extends Application {
         // set Scene and show Stage
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 500, 415));
-        //primaryStage.getClass().getClassLoader().getResource("assets/style.css").toExternalForm();
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

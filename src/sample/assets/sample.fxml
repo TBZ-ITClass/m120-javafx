@@ -7,39 +7,46 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <GridPane fx:controller="sample.controller.LoginController"
           xmlns:fx="http://javafx.com/fxml"
           alignment="center"
           hgap="10"
-          vgap="10">
+          vgap="10"
+          stylesheets="">
 
     <padding>
         <Insets top="25" right="25" bottom="10" left="25"/>
     </padding>
 
-    <!-- TODO: Font - Tahoma:NORMAL, 30px -->
-    <Text text="Login"
-          GridPane.columnIndex="0"
-          GridPane.rowIndex="0"
-          GridPane.columnSpan="2"
-          fill="#24305e"
-    />
+    <children>
+        <Text text="Login"
+              GridPane.columnIndex="0"
+              GridPane.rowIndex="0"
+              GridPane.columnSpan="2"
+              fill="#24305e">
+            <!-- TODO: Font - Tahoma:NORMAL -->
+            <font>
+                <Font size="30"
+                />
+            </font>
+        </Text>
 
 
-    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="loginBtn"/>
+        <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
 
-    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
 
-    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
-        <Button text="Sign In" onAction="#signIn"/>
-    </HBox>
+        <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button text="Sign In" onAction="#signIn" defaultButton="true"/>
+        </HBox>
 
-    <Text fx:id="actiontarget"
-          GridPane.columnIndex="0" GridPane.columnSpan="2"
-          GridPane.halignment="RIGHT" GridPane.rowIndex="6"
-          fill="#f75c6c"
-    />
-
+        <Text fx:id="actiontarget"
+              GridPane.columnIndex="0" GridPane.columnSpan="2"
+              GridPane.halignment="RIGHT" GridPane.rowIndex="6"
+              fill="#f75c6c"
+        />
+    </children>
 </GridPane>
