@@ -1,3 +1,14 @@
-.loginBtn {
-    -fx-font-size: 1000px;
+#btnSignin {
+    -fx-background-color: #4CAF50;
+    -fx-fill: #fff;
+    -fx-padding: 14px 20px;
+    -fx-margin: 8px 0;
+    -fx-border: none;
+    -fx-cursor: pointer;
+    -fx-width: 100%;
+}
+
+/* Add a hover effect for buttons */
+ #btnSignin:hover {
+     -fx-opacity: 0.8;
 }
