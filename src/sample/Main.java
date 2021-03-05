@@ -16,7 +16,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sample.util.HTTPHandler;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -82,7 +84,24 @@ public class Main extends Application {
                 lblErr.setText(String.join("\n", errors));
                 return;
             }
-            System.out.println(txtUsr.getText() + " | " + txtPwd.getText());
+            try {
+                switch (HTTPHandler.post("http://genetv.net:34430/login", "{ \"username\": \"" + txtUsr.getText() + "\", \"password\": \"" + txtPwd.getText() + "\"}")) {
+                    case "200":
+                        System.out.println("Logged in!");
+                        System.exit(0);
+                        break;
+                    case "401":
+                        lblErr.setText("Password is wrong.");
+                        break;
+                    default:
+                        lblErr.setText("Password is wrong.");
+                        //lblErr.setText("Unknown error occurred. Try it again.");
+                }
+
+            } catch (IOException e) {
+                System.out.println(e);
+                lblErr.setText("Unknown error occurred. Try it again.");
+            }
         });
 
         // set Scene and show Stage
