@@ -85,7 +85,7 @@ public class Main extends Application {
                 return;
             }
             try {
-                switch (HTTPHandler.post("http://genetv.net:34430/login", "{ \"username\": \"" + txtUsr.getText() + "\", \"password\": \"" + txtPwd.getText() + "\"}")) {
+                switch (HTTPHandler.post("/login", "{ \"username\": \"" + txtUsr.getText() + "\", \"password\": \"" + txtPwd.getText() + "\"}")) {
                     case "200":
                         System.out.println("Logged in!");
                         System.exit(0);
